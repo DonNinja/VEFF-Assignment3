@@ -88,7 +88,7 @@ app.get(default_path + 'events/:id/bookings', (req, res) => {
 app.get(default_path + 'events/:event_id/bookings/:booking_id', (req, res) => {
 	// Gets a booking from an event
 	for (var e = 0; e < events.length; e++) { // Iterate through list of events
-		if (events[e].id == req.params.id) {
+		if (events[e].id == req.params.event_id) {
 			var event = events[e]; // Get event
 			for (var j = 0; j < event.bookings.length; j++) { // Iterate through all bookings within event
 				if (event.bookings[j] == req.params.booking_id) { // Check if the booking is in event
@@ -266,7 +266,7 @@ app.delete(default_path + 'events/:id', (req, res) => {
 					return res.status(200).send(deleted_event); // Return the deleted event
 				}
 				else { // If the event has bookings
-					return res.status(400).send("The event can not have any bookings, there are currently " + event.bookings.length + " bookings associated with the event."); // Say that it failed, and how many bookings are booked to the event.
+					return res.status(400).send("The event can not be deleted if it has bookings, there are currently " + event.bookings.length + " bookings associated with the event."); // Say that it failed, and how many bookings are booked to the event.
 				}
 			}
 		}
