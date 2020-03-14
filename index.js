@@ -324,7 +324,7 @@ app.use('*', (req, res) => {
 	res.status(405).send('Operation not supported');
 });
 
-app.listen(port, hostname, () => {
+app.listen(port, () => {
 	console.log('Express app listening on port ' + port);
 });
 
