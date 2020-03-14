@@ -20,7 +20,7 @@ const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
 
-const hostname = 'https://radiant-retreat-35620.herokuapp.com/';
+// const hostname = 'localhost';
 const port = process.env.PORT || 3000; // Heroku PORT or 3000
 const default_path = '/api/v1/'; // Set up default path so we don't have to write '/api/v1/' over and over again
 
