@@ -300,7 +300,7 @@ app.delete(default_path + 'events/:id/bookings', (req, res) => {
 app.delete(default_path + 'events/:events_id/bookings/:bookings_id', (req, res) => {
 	// Deletes specific booking from event
 	for (var e = 0; e < events.length; e++) { // Iterate through list of events
-		if (events[e].id == req.params.id) {
+		if (events[e].id == req.params.events_id) {
 			var event = events[e]; // Get event
 			for (var j = 0; j < event.bookings.length; j++) {
 				if (event.bookings[j] == req.params.bookings_id) {
